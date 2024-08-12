@@ -1,23 +1,27 @@
 .popup {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
+  bottom: 0;
+  right: 0;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   padding: 0 15px;
   border-radius: 5px;
   opacity: 0;
   pointer-events: none;
    z-index: -50;
-  transition: .5s;
-  backdrop-filter: blur(3px);
+   background-image: linear-gradient(180deg, $color3 50%, $color4 50%);
+   transition: opacity 1.5s;
   @include flex-mix(center, center,row,0);
 
   &-visible {
       opacity: 1;
       pointer-events: all;
       z-index: 50;
-  }
+      transition: opacity 1.5s;
+      transition-delay: .5s;
+    }
 
 }
 
@@ -66,7 +70,7 @@
 
 
   &-active {
-    animation: show-inner 1s ease .5s 1 forwards ;
+    animation: show-inner 1s ease 1s 1 forwards ;
     
   }
 }

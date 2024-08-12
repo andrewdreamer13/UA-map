@@ -1,0 +1,109 @@
+.map {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: $color1;
+}
+
+.map__title {
+  font-size: clamp(35px, 1.7463rem + 2.2059vw, 50px);;
+  font-weight:700 ;
+  line-height: 1;
+  letter-spacing: 2px;
+  text-align: center;
+  color: $color2;
+  margin-bottom: 30px;
+}
+.map__inner {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  justify-content: center;
+  align-content: center;
+   gap: 20px;
+}
+
+.map__svg-box {
+  max-height: 750px;
+}
+
+#ua {
+  width: 100%;
+  height: 100%;
+  fill: $color3;
+  stroke: #fff;
+
+}
+
+.svg-link {
+  background-color:$color3;
+}
+
+.svg-link path {
+  fill: $color3;
+}
+
+
+.map__regions {
+  list-style: none;
+  border: 1px solid $color2;
+  padding: 10px;
+  background-color: $color3;
+  border-radius: 10px;
+}
+
+.region__item {
+  background-color: transparent;
+  margin: 0;
+  transition: all 0.2s;
+}
+
+.region__link {
+  display: block;
+  padding: 5px;
+  font-size: 18px;
+  transition: all 0.2s;
+
+  &-active {
+    background-color: $color4;
+    color: $color3;
+    font-weight: 700;
+  }
+
+}
+
+.inert {
+  pointer-events: none;
+}
+
+@media (max-width: 1024px) {
+  .map__inner {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .map__regions {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .region__link {
+    text-decoration: underline 2px;
+    text-underline-offset: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .region__link {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 390px) {
+  .region__link {
+    font-size: 14px;
+  }
+}
